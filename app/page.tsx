@@ -2,7 +2,7 @@
 // Cascadia Fitness — "Protein After 50" landing page
 // Replace KIT_CHECKOUT_URL and KIT_FORM_EMBED when Kit Commerce is configured.
 
-const KIT_CHECKOUT_URL = "https://YOUR-KIT-HANDLE.kit.com/products/protein-after-50"; // TODO: replace
+import BuyBookButton from "@/components/BuyBookButton";
 
 export default function Home() {
   return (
@@ -39,12 +39,7 @@ export default function Home() {
                 <span className="font-serif text-4xl text-forest">$27</span>
                 <span className="text-charcoal/60 ml-2 text-sm">introductory</span>
               </div>
-              <a
-                href={KIT_CHECKOUT_URL}
-                className="inline-flex items-center justify-center bg-forest hover:bg-forest/90 text-cream px-8 py-4 rounded-sm text-base font-medium tracking-wide transition-colors"
-              >
-                Get the book
-              </a>
+              <BuyBookButton className="inline-flex items-center justify-center bg-forest hover:bg-forest/90 text-cream px-8 py-4 rounded-sm text-base font-medium tracking-wide transition-colors" />
             </div>
             <p className="text-xs text-charcoal/50 italic">
               Launch price — increases to $37 after initial reader reviews.
