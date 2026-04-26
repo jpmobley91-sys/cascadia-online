@@ -25,7 +25,7 @@ interface BuyBookButtonProps {
  */
 export default function BuyBookButton({
   className = "",
-  children = "Get the book — $27",
+  children = "Read Protein After 50 — $27",
 }: BuyBookButtonProps) {
   return (
     <>
@@ -35,7 +35,7 @@ export default function BuyBookButton({
         strategy="lazyOnload"
       />
       <a
-        href="https://cascadia-fitness.kit.com/products/protein-after-50"
+        href="https://cascadia-fitness.kit.com/products/protein-after-50?step=checkout"
         data-commerce
         className={className}
       >
