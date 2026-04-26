@@ -2,6 +2,7 @@
 // Cascadia Fitness — "Protein After 50" landing page
 // Replace KIT_CHECKOUT_URL and KIT_FORM_EMBED when Kit Commerce is configured.
 
+import Image from "next/image";
 import BuyBookButton from "@/components/BuyBookButton";
 
 export default function Home() {
@@ -12,12 +13,14 @@ export default function Home() {
         <div className="max-w-5xl mx-auto grid md:grid-cols-5 gap-10 items-center">
           {/* Cover */}
           <div className="md:col-span-2 flex justify-center">
-            <div className="relative w-64 md:w-full aspect-[2/3] shadow-xl rounded-sm overflow-hidden bg-stone/30">
-              {/* Replace with next/image once cover is uploaded to /public */}
-              <div className="absolute inset-0 flex items-center justify-center text-charcoal/40 text-sm font-serif italic">
-                [Cover — replace in /public]
-              </div>
-            </div>
+            <Image
+              src="/protein-after-50-cover.png"
+              alt="Protein After 50 — Evidence-Based Strategies for Muscle, Strength, and Independence"
+              width={4406}
+              height={7031}
+              priority
+              className="w-64 md:w-full shadow-xl rounded-sm overflow-hidden"
+            />
           </div>
 
           {/* Copy */}
