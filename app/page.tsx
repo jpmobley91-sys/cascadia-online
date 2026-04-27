@@ -4,6 +4,7 @@
 
 import Image from "next/image";
 import BuyBookButton from "@/components/BuyBookButton";
+import CreatineChapterForm from "@/components/CreatineChapterForm";
 
 export default function Home() {
   return (
@@ -115,29 +116,7 @@ export default function Home() {
             unpacked without hype. We&apos;ll email the PDF immediately.
           </p>
 
-          {/* Kit embed goes here. Replace the div below with Kit's form embed code,
-              OR keep this structure and connect via Kit's JS snippet. */}
-          <div id="kit-form-creatine-chapter" className="max-w-md mx-auto">
-            {/* TODO: Paste Kit form embed HTML/JS here.
-                Form should tag subscribers "creatine_chapter_lead". */}
-            <form className="flex flex-col sm:flex-row gap-3">
-              <input
-                type="email"
-                required
-                placeholder="your@email.com"
-                className="flex-1 px-4 py-3 rounded-sm bg-cream text-charcoal placeholder-charcoal/40 focus:outline-none focus:ring-2 focus:ring-teal"
-              />
-              <button
-                type="submit"
-                className="bg-teal hover:bg-teal/90 px-6 py-3 rounded-sm text-cream font-medium transition-colors"
-              >
-                Send the chapter
-              </button>
-            </form>
-            <p className="text-cream/50 text-xs mt-4">
-              One-click unsubscribe. We never sell your email.
-            </p>
-          </div>
+          <CreatineChapterForm className="max-w-md mx-auto" />
         </div>
       </section>
 
