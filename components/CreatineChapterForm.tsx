@@ -10,18 +10,13 @@ interface CreatineChapterFormProps {
  * Kit lead-magnet form for "The Creatine Chapter" (Chapter 5 of
  * Protein After 50).
  *
- * Uses Kit's HTML embed (not the JS embed) because Next.js's <Script>
- * component relocates JS-injection scripts to the document end, which
- * caused the form to render after the footer in our previous attempt.
- * The HTML embed renders the form structure inline at this component's
- * DOM position, then the script enhances it.
+ * Uses Kit's HTML embed (not the JS embed) so the form renders inline
+ * at this component's DOM position. Kit's full CSS stylesheet lives
+ * in app/globals.css, scoped to [data-uid="abaccbc5bd"] so it doesn't
+ * bleed onto other elements.
  *
  * Form copy, fields, and incentive email are managed in Kit
  * (Grow > Landing Pages & Forms > Free Creatine Chapter 5).
- *
- * Scoped CSS overrides hide Kit's built-in form headlines (we use
- * the section's editorial copy instead) and ensure the form container
- * is centered on the page.
  *
  * On submit: Kit sends the double-opt-in confirmation email; on
  * confirm, the subscriber is redirected to the auto-deliver download
@@ -32,19 +27,6 @@ export default function CreatineChapterForm({
 }: CreatineChapterFormProps) {
   return (
     <div className={className}>
-      {/* Scoped style overrides — hide Kit's form headlines since the
-          section's editorial copy already does that work, and center
-          the form card within the section. */}
-      <style jsx global>{`
-        .formkit-form[data-uid="abaccbc5bd"] .formkit-header,
-        .formkit-form[data-uid="abaccbc5bd"] .formkit-subheader {
-          display: none !important;
-        }
-        .formkit-form[data-uid="abaccbc5bd"] {
-          margin: 0 auto;
-        }
-      `}</style>
-
       <Script
         src="https://f.convertkit.com/ckjs/ck.5.js"
         strategy="lazyOnload"
